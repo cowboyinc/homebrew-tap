@@ -11,23 +11,23 @@ class Cowchat < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.5.1/cowchat-v0.5.1-aarch64-apple-darwin.tar.gz"
-      sha256 "aed4b95948ac8501b123fe972d9d017bbaf216c6e130d55ac600825b6f8b4d98"
+      url "https://github.com/cowboyinc/cowchat/releases/download/v0.5.2/cowchat-v0.5.2-aarch64-apple-darwin.tar.gz"
+      sha256 "54cc591fafb25c3335e45f5ffbc9f65b98228383ee02d55668c40062f404c21f"
     end
     on_intel do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.5.1/cowchat-v0.5.1-x86_64-apple-darwin.tar.gz"
-      sha256 "4867a337b4083299608bf9397cebcd40ed1261d818fecac4f004724a38d2a811"
+      url "https://github.com/cowboyinc/cowchat/releases/download/v0.5.2/cowchat-v0.5.2-x86_64-apple-darwin.tar.gz"
+      sha256 "2ba23be63db30d36775da091a60af45cb665581a6957da96313f7faf798d2e6a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.5.1/cowchat-v0.5.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "bbb5c99a54dabcdffd733a264ccda94c3f03c45e8ff3b20f840b236fd3b4ef3f"
+      url "https://github.com/cowboyinc/cowchat/releases/download/v0.5.2/cowchat-v0.5.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "e29d538a44a7a46447a2c4795715ca9a12a495b8dae3b1d65cdde3e31282adef"
     end
     on_intel do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.5.1/cowchat-v0.5.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "505d75872fb62f97eff5db56d9ea839198816dbb5cb49b1f4c759a9dc286378c"
+      url "https://github.com/cowboyinc/cowchat/releases/download/v0.5.2/cowchat-v0.5.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "277007e169e90e87787c765b65947fc5c6b6d18b6d7eadef4acf2c72c7f31eaf"
     end
   end
 
