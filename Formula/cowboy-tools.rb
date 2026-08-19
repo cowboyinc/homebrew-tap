@@ -15,10 +15,12 @@ class CowboyTools < Formula
   depends_on "cowboyinc/tap/lasso"
 
   def install
-    prefix.install "README.md"
+    # A root-level README counts as metadata and trips Homebrew's
+    # empty-installation check; pkgshare does not.
+    pkgshare.install "README.md"
   end
 
   test do
-    assert_predicate prefix/"README.md", :exist?
+    assert_predicate pkgshare/"README.md", :exist?
   end
 end
