@@ -106,6 +106,7 @@ class Cowboy < Formula
     resource("lasso").stage do
       bin.install Dir["lasso-*"].first => "lasso"
     end
+    chmod 0755, %w[cowboy cowboy-dev-runner cbfs lasso].map { |name| bin/name }
     generate_completions_from_executable(bin/"cowboy", "completions")
   end
 
