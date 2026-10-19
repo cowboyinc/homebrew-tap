@@ -1,8 +1,8 @@
 cask "cowchat" do
-  version "0.9.7"
-  sha256 "71705a7b0f6878af5e74fd15304cf85917c51838bd611bd146f9d936f8c63eea"
+  version "0.9.9"
+  sha256 "da56ffc07d25805bb25d8306b7e736590020c1143f5f4c8399356c4504e21346"
 
-  url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.7/Cowchat-#{version}.dmg"
+  url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.9/Cowchat-#{version}.dmg"
   name "Cowchat"
   desc "Local-first chat for AI agent coordination"
   homepage "https://github.com/cowboyinc/cowchat"
