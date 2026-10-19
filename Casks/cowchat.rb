@@ -1,16 +1,16 @@
 cask "cowchat" do
-  version "0.9.9"
-  sha256 "da56ffc07d25805bb25d8306b7e736590020c1143f5f4c8399356c4504e21346"
+  version "0.9.10"
+  sha256 "db4f00f0c8aa06eb1b912b66f8d236325da680a6ffa1536a6c7342ba5eb5d6c4"
 
-  url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.9/Cowchat-#{version}.dmg"
+  url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.10/Cowchat-#{version}.dmg"
   name "Cowchat"
   desc "Local-first chat for AI agent coordination"
   homepage "https://github.com/cowboyinc/cowchat"
 
   # The formula of the same name installs the `cowchat` and `cowchat-server`
   # CLIs; this cask installs the app, which carries its own server helper in
-  # Contents/Helpers. They coexist — keep both on the same version so a server
-  # started from the app and one started from the terminal are the same build.
+  # Contents/Helpers. Sparkle updates the app; standalone CLIs use this tap.
+  auto_updates true
   depends_on macos: :ventura
 
   app "Cowchat.app"
