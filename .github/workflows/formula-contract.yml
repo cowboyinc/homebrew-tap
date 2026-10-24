@@ -1,0 +1,18 @@
+name: Formula contract
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  cowboy-toolset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          persist-credentials: false
+      - name: Check formula syntax and embedded CBFS contract
+        run: |
+          ruby --disable-gems -c Formula/cowboy.rb
+          ruby --disable-gems tests/cowboy_formula_test.rb
