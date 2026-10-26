@@ -1,19 +1,15 @@
 class Cowboy < Formula
   desc "Cowboy blockchain command-line tool"
   homepage "https://github.com/cowboyinc/cowboy-cli"
+  # Each platform's certified archive holds cowboy, cowboy-dev-runner and lasso.
+  # macOS is Apple Silicon only; Intel Macs are not supported.
+  url "https://github.com/cowboyinc/cowboy-cli/releases/download/v0.0.45/cowboy-darwin-arm64.tar.xz"
   version "0.0.45"
+  sha256 "747c344410aeea5c550aeb2f240719d04c1daaf67f0066b6a56501259c940f61"
   license any_of: ["MIT", "Apache-2.0"]
 
-  # Each platform's certified archive holds cowboy, cowboy-dev-runner and lasso.
   on_macos do
-    on_arm do
-      url "https://github.com/cowboyinc/cowboy-cli/releases/download/v0.0.45/cowboy-darwin-arm64.tar.xz"
-      sha256 "747c344410aeea5c550aeb2f240719d04c1daaf67f0066b6a56501259c940f61"
-    end
-    on_intel do
-      url "https://github.com/cowboyinc/cowboy-cli/releases/download/v0.0.45/cowboy-darwin-x64.tar.xz"
-      sha256 "401076d2330b8027e24f48a82463cc30676854781a98d3e5765a479635b6d734"
-    end
+    depends_on arch: :arm64
   end
 
   on_linux do
