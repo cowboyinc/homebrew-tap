@@ -1,6 +1,9 @@
 class Cowchat < Formula
   desc "Local-first chat server for AI agent coordination (CLI + server)"
   homepage "https://github.com/cowboyinc/cowchat"
+  # macOS is Apple Silicon only; Intel Macs are not supported.
+  url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.12/cowchat-v0.9.12-aarch64-apple-darwin.tar.gz"
+  sha256 "323304c0c62376b8c929e7542d8465aad045e3d2f8c0c987cef1bbd28b6e2dec"
   license any_of: ["MIT", "Apache-2.0"]
 
   # `brew install --HEAD cowboyinc/tap/cowchat` builds from source instead.
@@ -10,14 +13,7 @@ class Cowchat < Formula
   end
 
   on_macos do
-    on_arm do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.12/cowchat-v0.9.12-aarch64-apple-darwin.tar.gz"
-      sha256 "323304c0c62376b8c929e7542d8465aad045e3d2f8c0c987cef1bbd28b6e2dec"
-    end
-    on_intel do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.12/cowchat-v0.9.12-x86_64-apple-darwin.tar.gz"
-      sha256 "48d6846aa66bcd8d3ee8317d197e71f094635159acf4c4aa7d2d8d0d8f00ac46"
-    end
+    depends_on arch: :arm64
   end
 
   on_linux do
