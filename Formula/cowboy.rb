@@ -3,9 +3,9 @@ class Cowboy < Formula
   homepage "https://github.com/cowboyinc/cowboy-cli"
   # Each platform's certified archive holds cowboy, cowboy-dev-runner and lasso.
   # macOS is Apple Silicon only; Intel Macs are not supported.
-  url "https://github.com/cowboyinc/cowboy-cli/releases/download/v0.0.51/cowboy-darwin-arm64.tar.xz"
-  version "0.0.51"
-  sha256 "3171883a29f5291faaa57cd9aa402b2a989638fa95ed792f54674a641dcc5ab8"
+  url "https://github.com/cowboyinc/cowboy-cli/releases/download/v0.0.52/cowboy-darwin-arm64.tar.xz"
+  version "0.0.52"
+  sha256 "b274da1116804786cf6987bd40b8e392fe8fa8ca6a057626679a6609425f7f83"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
@@ -14,12 +14,12 @@ class Cowboy < Formula
 
   on_linux do
     on_arm do
-      url "https://github.com/cowboyinc/cowboy-cli/releases/download/v0.0.51/cowboy-linux-arm64.tar.xz"
-      sha256 "e004d5ee33cec4cbbc2789a668d5129597065c0bcce8491fb50a47f7f959b957"
+      url "https://github.com/cowboyinc/cowboy-cli/releases/download/v0.0.52/cowboy-linux-arm64.tar.xz"
+      sha256 "266f0abb8e3bb65ad949906500641a1476e8d4d1451b747de149b03c158d3cd9"
     end
     on_intel do
-      url "https://github.com/cowboyinc/cowboy-cli/releases/download/v0.0.51/cowboy-linux-x64.tar.xz"
-      sha256 "8d75b96f41776a1ab192d287deacada7ddf5e511e66e7d75e99f674d26dab7b2"
+      url "https://github.com/cowboyinc/cowboy-cli/releases/download/v0.0.52/cowboy-linux-x64.tar.xz"
+      sha256 "3cab239388e315b2d63710ee234592fe7b9826638fc05c3248be665af7cd2913"
     end
   end
 
