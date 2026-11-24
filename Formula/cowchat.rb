@@ -11,23 +11,23 @@ class Cowchat < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.15/cowchat-v0.9.15-aarch64-apple-darwin.tar.gz"
-      sha256 "ec22baff07993fd5fb634d5013bd9af9365d6477c43a18695680b755e7a48832"
+      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.16/cowchat-v0.9.16-aarch64-apple-darwin.tar.gz"
+      sha256 "f9c3f769eae47f47018af7a48a82bf308df706d0dda4ec628982f1c74da3d392"
     end
     on_intel do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.15/cowchat-v0.9.15-x86_64-apple-darwin.tar.gz"
-      sha256 "55951565b0333d2bbc3b2edff80f5c7438b0ec53e49d99ac9c46cfc809510e00"
+      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.16/cowchat-v0.9.16-x86_64-apple-darwin.tar.gz"
+      sha256 "2aaf3db62a6c7afd7dacf75b9cf4317b8f35da9e10dee77b3194bba53a759f3b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.15/cowchat-v0.9.15-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "285bf3e53aa594fac4521ba053058f457a4d60d07968a2dea3eeaadc985b837d"
+      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.16/cowchat-v0.9.16-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "6bc37391919482e91e15368815fe30837e9180547babd7780a63c36e24f3caa6"
     end
     on_intel do
-      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.15/cowchat-v0.9.15-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "deba087c915154d07b88b69528588d018e6946e406d7ba222139ef094dae92ff"
+      url "https://github.com/cowboyinc/cowchat/releases/download/v0.9.16/cowchat-v0.9.16-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "d172cb295b5b45c5b398088edff9af77571c464ba3e1c662bc87e4a4c745a9a0"
     end
   end
 
@@ -35,8 +35,9 @@ class Cowchat < Formula
     if build.head?
       system "cargo", "install", *std_cargo_args(path: "crates/cowchat-cli")
       system "cargo", "install", *std_cargo_args(path: "crates/cowchat-server")
+      system "cargo", "install", *std_cargo_args(path: "crates/cowchat-codex")
     else
-      bin.install "cowchat", "cowchat-server"
+      bin.install "cowchat", "cowchat-server", "cowchat-codex"
       prefix.install "LICENSE-MIT", "LICENSE-APACHE", "THIRD-PARTY-NOTICES.md"
     end
   end
@@ -44,5 +45,6 @@ class Cowchat < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/cowchat --version")
     assert_match version.to_s, shell_output("#{bin}/cowchat-server --version")
+    assert_match version.to_s, shell_output("#{bin}/cowchat-codex --version")
   end
 end
